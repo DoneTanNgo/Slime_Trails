@@ -1,0 +1,117 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://PlayerHolder/player_ui.gd" type="Script" id=1]
+[ext_resource path="res://Godot-Fontpack/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/poco/Poco.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Sprites/Player/PngsFiles/Projectiles_UI.png" type="Texture" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.25098, 0.988235, 0.317647, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 1, 0.207843, 0.121569, 0 )
+border_color = Color( 0.121569, 0.32549, 0.0392157, 1 )
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.172549, 0.623529, 0.94902, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0, 0, 0, 0 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="DynamicFont" id=6]
+size = 50
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 65
+font_data = ExtResource( 2 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 1021.0
+margin_bottom = 105.0
+
+[node name="ProgressBar" type="ProgressBar" parent="HBoxContainer"]
+margin_right = 1021.0
+margin_bottom = 105.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/fg = SubResource( 1 )
+custom_styles/bg = SubResource( 2 )
+max_value = 20.0
+value = 10.0
+percent_visible = false
+
+[node name="ProgressBar2" type="ProgressBar" parent="."]
+margin_left = 2.0
+margin_top = 107.0
+margin_right = 475.0
+margin_bottom = 179.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/fg = SubResource( 4 )
+custom_styles/bg = SubResource( 5 )
+max_value = 3.0
+value = 3.0
+percent_visible = false
+
+[node name="Label" type="Label" parent="ProgressBar2"]
+margin_left = 8.0
+margin_top = -6.0
+margin_right = 153.0
+margin_bottom = 54.0
+custom_fonts/font = SubResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 99, 297 )
+scale = Vector2( 0.510417, 0.510417 )
+texture = ExtResource( 3 )
+hframes = 3
+vframes = 3
+frame = 1
+
+[node name="ProjectilesUi" type="Sprite" parent="."]
+position = Vector2( 55, 278 )
+texture = ExtResource( 3 )
+hframes = 3
+vframes = 3
+
+[node name="Ammo" type="Label" parent="."]
+margin_left = 134.0
+margin_top = 240.0
+margin_right = 408.0
+margin_bottom = 319.0
+custom_fonts/font = SubResource( 3 )
+text = "Ammo: 1/#"

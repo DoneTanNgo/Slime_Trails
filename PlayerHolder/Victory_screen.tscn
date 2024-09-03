@@ -1,0 +1,177 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Godot-Fontpack/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/poco/Poco.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Godot-Fontpack/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/poco/Poco.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Sprites/Player/PngsFiles/popup-3.png.png" type="Texture" id=3]
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0.803922, 0.803922, 0.803922, 0.533333 )
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.152941, 0.145098, 0.129412, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.992157, 0.992157, 0.992157, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+use_mipmaps = true
+extra_spacing_top = -18
+extra_spacing_bottom = 2
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.203922, 0.960784, 0.533333, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.113725, 0.533333, 0.294118, 1 )
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.580392, 0.372549, 0.0392157, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.203922, 0.960784, 0.533333, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.113725, 0.533333, 0.294118, 1 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.580392, 0.372549, 0.0392157, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.203922, 0.960784, 0.533333, 1 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.113725, 0.533333, 0.294118, 1 )
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0.580392, 0.372549, 0.0392157, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Control" type="Control"]
+pause_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1437.0
+margin_top = -1279.0
+margin_right = 603.0
+margin_bottom = 304.0
+
+[node name="Popup" type="Popup" parent="."]
+pause_mode = 2
+margin_left = -2292.0
+margin_top = -644.0
+margin_right = 3121.0
+margin_bottom = 1533.0
+
+[node name="Panel2" type="Panel" parent="Popup"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -2370.0
+margin_top = -1312.5
+margin_right = 2883.0
+margin_bottom = 1348.5
+custom_styles/panel = SubResource( 16 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Popup"]
+margin_left = 2634.0
+margin_top = 651.0
+margin_right = 2986.0
+margin_bottom = 1241.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="Popup/VBoxContainer"]
+margin_right = 352.0
+margin_bottom = 590.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Popup/VBoxContainer/Panel"]
+position = Vector2( 170, 105 )
+scale = Vector2( 1.34375, 1.34375 )
+texture = ExtResource( 3 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Popup/VBoxContainer/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 6.0
+margin_top = 175.0
+margin_right = -7.0
+margin_bottom = -7.0
+
+[node name="Try Again" type="Button" parent="Popup/VBoxContainer/Panel/VBoxContainer"]
+margin_right = 339.0
+margin_bottom = 133.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/normal = SubResource( 12 )
+text = "Try Again"
+
+[node name="Menu" type="Button" parent="Popup/VBoxContainer/Panel/VBoxContainer"]
+margin_top = 137.0
+margin_right = 339.0
+margin_bottom = 270.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/normal = SubResource( 13 )
+text = "Settings"
+
+[node name="Exit" type="Button" parent="Popup/VBoxContainer/Panel/VBoxContainer"]
+margin_top = 274.0
+margin_right = 339.0
+margin_bottom = 408.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/normal = SubResource( 14 )
+text = "To Menu"
+
+[connection signal="pressed" from="Popup/VBoxContainer/Panel/VBoxContainer/Try Again" to="." method="_on_Continue_pressed"]
+[connection signal="pressed" from="Popup/VBoxContainer/Panel/VBoxContainer/Menu" to="." method="_on_Setting_pressed"]
+[connection signal="pressed" from="Popup/VBoxContainer/Panel/VBoxContainer/Exit" to="." method="_on_Exit_to_Menu_pressed"]

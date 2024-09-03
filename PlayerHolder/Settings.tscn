@@ -1,0 +1,177 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Godot-Fontpack/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/poco/Poco.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Godot-Fontpack/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/poco/Poco.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Sprites/Enemy/PngsFiles/palceholder.png" type="Texture" id=3]
+[ext_resource path="res://PlayerHolder/setting_controls.tscn" type="PackedScene" id=4]
+[ext_resource path="res://PlayerHolder/Settings.gd" type="Script" id=5]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 0.533333 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.152941, 0.145098, 0.129412, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.992157, 0.992157, 0.992157, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="DynamicFont" id=3]
+size = 50
+use_mipmaps = true
+extra_spacing_top = -18
+extra_spacing_bottom = 2
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.203922, 0.960784, 0.533333, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.831373, 0.835294, 0.835294, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.278431, 0.278431, 0.278431, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.203922, 0.960784, 0.533333, 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.831373, 0.835294, 0.835294, 1 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.278431, 0.278431, 0.278431, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="DynamicFont" id=13]
+size = 50
+use_mipmaps = true
+extra_spacing_top = -18
+extra_spacing_bottom = 2
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0.203922, 0.960784, 0.533333, 1 )
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0.831373, 0.835294, 0.835294, 1 )
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0.278431, 0.278431, 0.278431, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource( 5 )
+
+[node name="Popup" type="Popup" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Panel2" type="Panel" parent="Popup"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -193.0
+margin_top = -204.0
+margin_right = 1394.0
+margin_bottom = 872.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Popup"]
+margin_left = 148.0
+margin_top = 9.0
+margin_right = 500.0
+margin_bottom = 599.0
+rect_scale = Vector2( 2.12584, 1.00054 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="Popup/VBoxContainer"]
+margin_right = 352.0
+margin_bottom = 590.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Popup/VBoxContainer/Panel"]
+position = Vector2( 170, 105 )
+scale = Vector2( 1.34375, 1.34375 )
+texture = ExtResource( 3 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Popup/VBoxContainer/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 6.0
+margin_top = 175.0
+margin_right = -7.0
+margin_bottom = -7.0
+
+[node name="Resume" type="Button" parent="Popup/VBoxContainer/Panel/VBoxContainer"]
+margin_right = 339.0
+margin_bottom = 133.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+text = "Resume"
+
+[node name="Video" type="Button" parent="Popup/VBoxContainer/Panel/VBoxContainer"]
+margin_top = 137.0
+margin_right = 339.0
+margin_bottom = 270.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/normal = SubResource( 9 )
+text = "Video"
+
+[node name="setting_video" parent="Popup/VBoxContainer/Panel/VBoxContainer/Video" instance=ExtResource( 4 )]
+
+[node name="Sound" type="Button" parent="Popup/VBoxContainer/Panel/VBoxContainer"]
+margin_top = 274.0
+margin_right = 339.0
+margin_bottom = 408.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 13 )
+custom_styles/hover = SubResource( 14 )
+custom_styles/pressed = SubResource( 15 )
+custom_styles/normal = SubResource( 16 )
+text = "Sound"
+
+[connection signal="pressed" from="Popup/VBoxContainer/Panel/VBoxContainer/Resume" to="." method="_on_Resume_pressed"]
+[connection signal="pressed" from="Popup/VBoxContainer/Panel/VBoxContainer/Video" to="." method="_on_Video_pressed"]
