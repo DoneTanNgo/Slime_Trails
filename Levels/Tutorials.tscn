@@ -1,0 +1,383 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://Levels/Maps/tutorial_map.tscn" type="PackedScene" id=1]
+[ext_resource path="res://PlayerHolder/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sprites/Keys/mouse.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Keys/KeySample.png" type="Texture" id=4]
+[ext_resource path="res://Levels/Tutorials.gd" type="Script" id=5]
+[ext_resource path="res://EnemeyContainer/Basic_enemies/test_dummy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Sprites/Player/PngsFiles/Projectiles_UI.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Player/PngsFiles/ammo_pack-1.png.png" type="Texture" id=8]
+[ext_resource path="res://Godot-Fontpack/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/poco/Poco.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://Godot-Fontpack/pixel.tres" type="DynamicFont" id=10]
+[ext_resource path="res://Levels/Timer_boss_level.gd" type="Script" id=11]
+
+[sub_resource type="StyleBoxFlat" id=18]
+bg_color = Color( 0.192157, 0.192157, 0.192157, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+
+[sub_resource type="DynamicFontData" id=17]
+font_path = "res://Godot-Fontpack/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/poco/Poco.ttf"
+
+[sub_resource type="DynamicFont" id=19]
+size = 24
+font_data = SubResource( 17 )
+
+[sub_resource type="DynamicFont" id=20]
+size = 36
+font_data = SubResource( 17 )
+
+[sub_resource type="StyleBoxFlat" id=21]
+bg_color = Color( 0.172549, 0.623529, 0.94902, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=22]
+bg_color = Color( 0, 0, 0, 0 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="DynamicFont" id=23]
+size = 50
+font_data = ExtResource( 9 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1737.5, 25.5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 39.5, 964.5 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( -4003, 1767 )
+
+[node name="Camera2D2" type="Camera2D" parent="."]
+position = Vector2( 3303, 1514 )
+zoom = Vector2( 3, 3 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 3271, 1387 )
+
+[node name="Label" type="Label" parent="Player"]
+margin_left = -78.0
+margin_top = -337.0
+margin_right = 102.0
+margin_bottom = -217.0
+custom_fonts/font = ExtResource( 10 )
+text = "Hold"
+
+[node name="Key2" type="Sprite" parent="Player"]
+position = Vector2( 3, -170 )
+scale = Vector2( 4.70316, 4.70316 )
+texture = ExtResource( 4 )
+hframes = 7
+vframes = 6
+frame = 28
+
+[node name="Mouse" type="Sprite" parent="Player"]
+position = Vector2( 7, -384 )
+scale = Vector2( 0.373047, 0.373047 )
+texture = ExtResource( 3 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="WindowDialog" type="Panel" parent="CanvasLayer"]
+margin_left = 259.0
+margin_top = 4.0
+margin_right = 730.0
+margin_bottom = 95.0
+custom_styles/panel = SubResource( 18 )
+
+[node name="Label" type="Label" parent="CanvasLayer/WindowDialog"]
+margin_left = 44.0
+margin_top = 24.0
+margin_right = 1392.0
+margin_bottom = 418.0
+custom_fonts/font = SubResource( 19 )
+text = "Dodges Through Enemies attacks
+"
+autowrap = true
+
+[node name="Key1" type="Sprite" parent="CanvasLayer"]
+visible = false
+position = Vector2( 40, 151 )
+scale = Vector2( 2.76855, 2.76855 )
+texture = ExtResource( 4 )
+hframes = 7
+vframes = 6
+frame = 25
+
+[node name="Key3" type="Sprite" parent="CanvasLayer"]
+visible = false
+position = Vector2( 3513, 1342 )
+scale = Vector2( 4.70316, 4.70316 )
+texture = ExtResource( 4 )
+hframes = 7
+vframes = 6
+
+[node name="WindowDialog2" type="Panel" parent="CanvasLayer"]
+visible = false
+margin_left = 486.0
+margin_top = 97.0
+margin_right = 731.0
+margin_bottom = 133.0
+custom_styles/panel = SubResource( 18 )
+
+[node name="Label" type="Label" parent="CanvasLayer/WindowDialog2"]
+margin_left = 3.0
+margin_top = -5.0
+margin_right = 259.0
+margin_bottom = 60.0
+custom_fonts/font = SubResource( 19 )
+text = "Space Bar to go Next
+"
+autowrap = true
+
+[node name="weapon" type="Panel" parent="CanvasLayer"]
+visible = false
+margin_left = 5.0
+margin_top = 10.0
+margin_right = 1014.0
+margin_bottom = 593.0
+custom_styles/panel = SubResource( 18 )
+
+[node name="Label" type="Label" parent="CanvasLayer/weapon"]
+margin_left = 11.0
+margin_top = 7.0
+margin_right = 535.0
+margin_bottom = 559.0
+custom_fonts/font = SubResource( 20 )
+text = "Each Weapon Has Different ammo counts so remeber to pick up the slime containers.
+
+Ammo is in the top left and how much it each shot cost is also shown there
+"
+autowrap = true
+
+[node name="AmmoPack-1png" type="Sprite" parent="CanvasLayer/weapon"]
+position = Vector2( 774, 73 )
+texture = ExtResource( 8 )
+
+[node name="Label2" type="Label" parent="CanvasLayer/weapon"]
+margin_left = 654.0
+margin_top = 178.0
+margin_right = 1022.0
+margin_bottom = 295.0
+custom_fonts/font = SubResource( 20 )
+text = "Ammo / Cost of Shot
+"
+autowrap = true
+
+[node name="ProjectilesUi" type="Sprite" parent="CanvasLayer/weapon/Label2"]
+position = Vector2( -60, 27 )
+texture = ExtResource( 7 )
+hframes = 3
+vframes = 3
+
+[node name="Label3" type="Label" parent="CanvasLayer/weapon"]
+margin_left = 655.0
+margin_top = 279.0
+margin_right = 1023.0
+margin_bottom = 396.0
+custom_fonts/font = SubResource( 20 )
+text = "10 / 1
+"
+autowrap = true
+
+[node name="ProjectilesUi" type="Sprite" parent="CanvasLayer/weapon/Label3"]
+position = Vector2( -60, 27 )
+texture = ExtResource( 7 )
+hframes = 3
+vframes = 3
+
+[node name="Label4" type="Label" parent="CanvasLayer/weapon"]
+margin_left = 652.0
+margin_top = 374.0
+margin_right = 1020.0
+margin_bottom = 491.0
+custom_fonts/font = SubResource( 20 )
+text = "10 / 3"
+autowrap = true
+
+[node name="ProjectilesUi" type="Sprite" parent="CanvasLayer/weapon/Label4"]
+position = Vector2( -60, 27 )
+texture = ExtResource( 7 )
+hframes = 3
+vframes = 3
+frame = 1
+
+[node name="Label5" type="Label" parent="CanvasLayer/weapon"]
+margin_left = 10.0
+margin_top = 518.0
+margin_right = 378.0
+margin_bottom = 635.0
+custom_fonts/font = SubResource( 20 )
+text = "Space bar to go next
+"
+autowrap = true
+
+[node name="dodge" type="Panel" parent="CanvasLayer"]
+visible = false
+margin_left = 5.0
+margin_top = 10.0
+margin_right = 1014.0
+margin_bottom = 593.0
+custom_styles/panel = SubResource( 18 )
+
+[node name="Label" type="Label" parent="CanvasLayer/dodge"]
+margin_left = 11.0
+margin_top = 7.0
+margin_right = 535.0
+margin_bottom = 559.0
+custom_fonts/font = SubResource( 20 )
+text = "Dodging is used to go through enemeys attacks.
+There is a limit to the dodge though. There is a bar in the top left showing the amount of dodge you have left."
+autowrap = true
+
+[node name="Label5" type="Label" parent="CanvasLayer/dodge"]
+margin_left = 10.0
+margin_top = 518.0
+margin_right = 378.0
+margin_bottom = 635.0
+custom_fonts/font = SubResource( 20 )
+text = "Space bar to go next
+"
+autowrap = true
+
+[node name="ProgressBar2" type="ProgressBar" parent="CanvasLayer/dodge"]
+margin_left = 520.0
+margin_top = 29.0
+margin_right = 993.0
+margin_bottom = 101.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/fg = SubResource( 21 )
+custom_styles/bg = SubResource( 22 )
+max_value = 3.0
+value = 3.0
+percent_visible = false
+
+[node name="Label" type="Label" parent="CanvasLayer/dodge/ProgressBar2"]
+margin_left = 8.0
+margin_top = -6.0
+margin_right = 153.0
+margin_bottom = 54.0
+custom_fonts/font = SubResource( 23 )
+
+[node name="ProgressBar3" type="ProgressBar" parent="CanvasLayer/dodge"]
+margin_left = 521.0
+margin_top = 116.0
+margin_right = 994.0
+margin_bottom = 188.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/fg = SubResource( 21 )
+custom_styles/bg = SubResource( 22 )
+max_value = 3.0
+value = 2.0
+percent_visible = false
+
+[node name="Label" type="Label" parent="CanvasLayer/dodge/ProgressBar3"]
+margin_left = 8.0
+margin_top = -6.0
+margin_right = 153.0
+margin_bottom = 54.0
+custom_fonts/font = SubResource( 23 )
+
+[node name="ProgressBar4" type="ProgressBar" parent="CanvasLayer/dodge"]
+margin_left = 522.0
+margin_top = 213.0
+margin_right = 995.0
+margin_bottom = 285.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/fg = SubResource( 21 )
+custom_styles/bg = SubResource( 22 )
+max_value = 3.0
+value = 1.0
+percent_visible = false
+
+[node name="Label" type="Label" parent="CanvasLayer/dodge/ProgressBar4"]
+margin_left = 8.0
+margin_top = -6.0
+margin_right = 153.0
+margin_bottom = 54.0
+custom_fonts/font = SubResource( 23 )
+
+[node name="Label6" type="Label" parent="CanvasLayer/dodge"]
+margin_left = 289.0
+margin_top = 355.0
+margin_right = 657.0
+margin_bottom = 493.0
+custom_fonts/font = SubResource( 20 )
+text = "REMEBER TO HOLD THE RIGHT CLICK TO DODGE 
+"
+autowrap = true
+
+[node name="spawnpoint" type="Position2D" parent="."]
+position = Vector2( 3938, 1013 )
+
+[node name="Timer" type="Timer" parent="spawnpoint"]
+script = ExtResource( 11 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 6 )]
+position = Vector2( 3269, 1710 )
+
+[node name="KinematicBody2D2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 4052, 1494 )
+
+[node name="KinematicBody2D3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 2505, 1469 )
+
+[node name="spawnpoint3" type="Position2D" parent="."]
+position = Vector2( 1926, 1504 )
+
+[node name="spawnpoint2" type="Position2D" parent="."]
+position = Vector2( 4577, 1476 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 3035, 1123 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 310, -505 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="StaticBody2D"]
+position = Vector2( -8, 1800 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/StaticBody2D"]
+position = Vector2( 310, -505 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 1641, 1540 )
+shape = SubResource( 2 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="StaticBody2D2"]
+position = Vector2( 3209, -15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2/StaticBody2D2"]
+position = Vector2( 1641, 1540 )
+shape = SubResource( 2 )
+
+[connection signal="timeout" from="spawnpoint/Timer" to="spawnpoint/Timer" method="_on_Timer_timeout"]

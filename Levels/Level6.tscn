@@ -1,0 +1,92 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Levels/Maps/Lvl5_top_down.tscn" type="PackedScene" id=1]
+[ext_resource path="res://PlayerHolder/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://EnemeyContainer/Final_type/final_boss.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Levels/Level6.gd" type="Script" id=4]
+[ext_resource path="res://Levels/Timer_boss_level.gd" type="Script" id=5]
+[ext_resource path="res://Levels/Timer_health.gd" type="Script" id=6]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -433.0, -453.0 ],
+"_edit_vertical_guides_": [ 1737.0, -1532.0, 1448.0 ]
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = -2208.0
+margin_top = -1610.0
+margin_right = 2013.0
+margin_bottom = 1944.0
+
+[node name="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 79, -254 )
+scale = Vector2( 1.864, 1.864 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 2 )]
+position = Vector2( -11, 770 )
+
+[node name="Camera2D2" type="Camera2D" parent="KinematicBody2D"]
+current = true
+zoom = Vector2( 3, 3 )
+limit_left = -1902
+limit_top = -1527
+limit_right = 1737
+limit_bottom = 1469
+
+[node name="boss" parent="." instance=ExtResource( 3 )]
+position = Vector2( -3, -72 )
+
+[node name="Camera2D" type="Camera2D" parent="boss"]
+
+[node name="boss_position_1" type="Position2D" parent="."]
+position = Vector2( -8, 281 )
+
+[node name="boss_position_2" type="Position2D" parent="."]
+position = Vector2( -1406, -341 )
+
+[node name="boss_position_3" type="Position2D" parent="."]
+position = Vector2( 1338, -341 )
+
+[node name="boss_position_4" type="Position2D" parent="."]
+position = Vector2( 1344, 1028 )
+
+[node name="boss_position_5" type="Position2D" parent="."]
+position = Vector2( -1406, 1034 )
+
+[node name="boss_position_6" type="Position2D" parent="."]
+position = Vector2( -31, -386 )
+
+[node name="boss_position_7" type="Position2D" parent="."]
+position = Vector2( 3, 1056 )
+
+[node name="boss_position_8" type="Position2D" parent="."]
+position = Vector2( 1344, 259 )
+
+[node name="boss_position_9" type="Position2D" parent="."]
+position = Vector2( -1400, 259 )
+
+[node name="boss_position_10" type="Position2D" parent="."]
+position = Vector2( 745, -56 )
+
+[node name="boss_position_11" type="Position2D" parent="."]
+position = Vector2( 774, 796 )
+
+[node name="boss_position_12" type="Position2D" parent="."]
+position = Vector2( -819, 813 )
+
+[node name="boss_position_13" type="Position2D" parent="."]
+position = Vector2( -832, -56 )
+
+[node name="Timer" type="Timer" parent="."]
+script = ExtResource( 5 )
+
+[node name="Timer2" type="Timer" parent="."]
+script = ExtResource( 6 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2( 10, 10 )
+
+[connection signal="timeout" from="Timer" to="Timer" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer2" to="Timer2" method="_on_Timer2_timeout"]

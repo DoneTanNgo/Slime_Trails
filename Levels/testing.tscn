@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://PlayerHolder/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://EnemeyContainer/Basic_enemies/crab_brawl.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Levels/Maps/tutorial_map.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Levels/testing.gd" type="Script" id=4]
+[ext_resource path="res://EnemeyContainer/Skele_type/running_mouths.tscn" type="PackedScene" id=5]
+[ext_resource path="res://EnemeyContainer/Basic_enemies/test_dummy.tscn" type="PackedScene" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1227.63, 83.5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 93.5, 868.5 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Crabby_boy" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1618, 1722 )
+
+[node name="Node2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( -200, 1485 )
+
+[node name="KinematicBody2D2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 23, 2027 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1881, -208 )
+
+[node name="Bullet_stopping" type="Area2D" parent="." groups=["wall_group"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bullet_stopping" groups=["wall_group"]]
+position = Vector2( 29.375, 2985.5 )
+shape = SubResource( 1 )
+
+[node name="Bullet_stopping2" type="Area2D" parent="." groups=["wall_group"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bullet_stopping2" groups=["wall_group"]]
+position = Vector2( 29, 1490 )
+shape = SubResource( 1 )
+
+[node name="Bullet_stopping3" type="Area2D" parent="." groups=["wall_group"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bullet_stopping3"]
+position = Vector2( -1121.5, 2388.5 )
+shape = SubResource( 2 )
+
+[node name="KinematicBody2D3" parent="." instance=ExtResource( 5 )]
+
+[node name="Camera2D" type="Camera2D" parent="KinematicBody2D3"]
+current = true

@@ -1,0 +1,184 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://PlayerHolder/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Levels/Maps/Cave_fall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Levels/Maps/Lvl4Ground.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Levels/Level4.gd" type="Script" id=4]
+[ext_resource path="res://Godot-Fontpack/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/poco/Poco.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Sprites/Tiles/light_sparkle.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Enemy/PngsFiles/Mage Finished_Demo_screen.png.png" type="Texture" id=7]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 64.5, 1363.5 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 1588.5, 8.5 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 1778, 11.5 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 76, 2682.5 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 50
+use_mipmaps = true
+extra_spacing_top = -18
+extra_spacing_bottom = 2
+font_data = ExtResource( 5 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 3070.0, -4044.0 ]
+}
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2( -2697, -1034 )
+scale = Vector2( 0.604955, 0.604955 )
+
+[node name="Cave2" parent="." instance=ExtResource( 2 )]
+modulate = Color( 1, 1, 1, 0.776471 )
+position = Vector2( -571, 372 )
+
+[node name="Cave1" parent="." instance=ExtResource( 2 )]
+modulate = Color( 1, 1, 1, 0.776471 )
+position = Vector2( -580, -4077 )
+
+[node name="ground" parent="." instance=ExtResource( 3 )]
+position = Vector2( -1075, 2916 )
+scale = Vector2( 2.88595, 2.88595 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 13, -3 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( -71, -13.9999 )
+scale = Vector2( 1.66648, 1.66648 )
+current = true
+zoom = Vector2( 3, 3 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2( -34, -3620 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2( 1559, 3666 )
+shape = SubResource( 4 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2( -17, -1810 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2( -1641, 1892 )
+shape = SubResource( 4 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( -67, 889 )
+shape = SubResource( 5 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( -17, -1810 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -45, 877 )
+shape = SubResource( 5 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Knightspawn" type="Position2D" parent="."]
+position = Vector2( 4, 4 )
+
+[node name="Down" type="Position2D" parent="."]
+position = Vector2( -48, 888 )
+rotation = -1.5708
+
+[node name="Light2D" type="Light2D" parent="Down"]
+position = Vector2( 91.9998, 45.0003 )
+rotation = 1.5708
+scale = Vector2( 3.24049, 3.24049 )
+enabled = false
+texture = ExtResource( 6 )
+color = Color( 0.807843, 0.894118, 0.054902, 1 )
+
+[node name="Up" type="Position2D" parent="."]
+position = Vector2( -84, -914 )
+rotation = 1.5708
+
+[node name="Light2D" type="Light2D" parent="Up"]
+position = Vector2( 119, -85.0004 )
+rotation = -1.5708
+scale = Vector2( 3.24, 3.24 )
+enabled = false
+texture = ExtResource( 6 )
+color = Color( 0.807843, 0.894118, 0.054902, 1 )
+
+[node name="Right" type="Position2D" parent="."]
+position = Vector2( 1481, -6 )
+rotation = 3.14159
+
+[node name="Light2D" type="Light2D" parent="Right"]
+position = Vector2( 91, 12.0002 )
+rotation = -3.14159
+scale = Vector2( 3.24, 3.24 )
+enabled = false
+texture = ExtResource( 6 )
+color = Color( 0.807843, 0.894118, 0.054902, 1 )
+
+[node name="Left" type="Position2D" parent="."]
+position = Vector2( -1609, -6 )
+
+[node name="Light2D" type="Light2D" parent="Left"]
+position = Vector2( 111, 8 )
+scale = Vector2( 3.24, 3.24 )
+enabled = false
+texture = ExtResource( 6 )
+color = Color( 0.807843, 0.894118, 0.054902, 1 )
+
+[node name="Area2D4" type="Area2D" parent="." groups=["wall_group"]]
+position = Vector2( -1627, -2094 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4" groups=["wall_group"]]
+position = Vector2( 1629, 1050 )
+shape = SubResource( 6 )
+
+[node name="Area2D3" type="Area2D" parent="." groups=["wall_group"]]
+position = Vector2( -1645, -6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3" groups=["wall_group"]]
+position = Vector2( 1629, 1050 )
+shape = SubResource( 6 )
+
+[node name="Area2D2" type="Area2D" parent="." groups=["wall_group"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" groups=["wall_group"]]
+position = Vector2( 1754, 465 )
+shape = SubResource( 7 )
+
+[node name="Area2D" type="Area2D" parent="." groups=["wall_group"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["wall_group"]]
+position = Vector2( -1853, 616.5 )
+shape = SubResource( 7 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+margin_left = 791.0
+margin_top = -1.0
+margin_right = 1017.0
+margin_bottom = 101.0
+custom_fonts/font = SubResource( 8 )
+text = "Time: Left"
+autowrap = true
+uppercase = true
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer"]
+visible = false
+position = Vector2( 495, 304 )
+scale = Vector2( 0.364667, 0.292748 )
+texture = ExtResource( 7 )
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
