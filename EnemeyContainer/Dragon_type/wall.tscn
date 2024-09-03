@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sprites/Enemy/PngsFiles/wall_tomb.png" type="Texture" id=1]
+[ext_resource path="res://EnemeyContainer/Dragon_type/wall.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 12.7556, 12.2521 )
+
+[node name="StaticBody2D" type="StaticBody2D"]
+collision_layer = 3
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -5, 2 )
+scale = Vector2( 5.95818, 5.95818 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 1, 1 )
+scale = Vector2( 7.24025, 7.24025 )
+texture = ExtResource( 1 )

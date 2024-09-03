@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://EnemeyContainer/Skele_type/skele_head.tscn" type="PackedScene" id=1]
+[ext_resource path="res://EnemeyContainer/Skele_type/Skeleton_Top.gd" type="Script" id=3]
+[ext_resource path="res://EnemeyContainer/Skele_type/skele_left_hand.tscn" type="PackedScene" id=6]
+[ext_resource path="res://EnemeyContainer/Skele_type/skele_right_hand.tscn" type="PackedScene" id=7]
+
+[node name="KinematicBody2D" type="Node2D"]
+scale = Vector2( 1.81541, 1.81541 )
+script = ExtResource( 3 )
+
+[node name="right_start_pos" type="Position2D" parent="."]
+position = Vector2( 616.941, 129.998 )
+
+[node name="thoughts2" type="Position2D" parent="."]
+position = Vector2( 116.778, -154.235 )
+scale = Vector2( 0.350627, 0.350627 )
+
+[node name="thoughts" type="Position2D" parent="."]
+position = Vector2( -116.778, -154.235 )
+scale = Vector2( 0.350627, 0.350627 )
+
+[node name="eye" type="Position2D" parent="."]
+position = Vector2( 57.2873, -180.125 )
+
+[node name="head_orginal_pos" type="Position2D" parent="."]
+position = Vector2( -1.56764, -124.956 )
+
+[node name="head" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1.01681, -124.956 )
+scale = Vector2( 1.00399, 1.00399 )
+
+[node name="left_arm_orginal_pos" type="Position2D" parent="."]
+position = Vector2( -605.924, 101.355 )
+
+[node name="right_arm_orginal_pos" type="Position2D" parent="."]
+position = Vector2( 610.881, 84.8293 )
+
+[node name="right_hand" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1065.87, 18.7285 )
+
+[node name="left_hand" parent="." instance=ExtResource( 6 )]
+position = Vector2( -1038.33, 63.8974 )
+
+[node name="Skeleton2D" type="Skeleton2D" parent="."]

@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://EnemeyContainer/enemey_ui.gd" type="Script" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 0.266667, 0.172549, 1 )
+border_width_left = 10
+border_width_top = 10
+border_width_bottom = 10
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_top = 0.688
+anchor_bottom = 0.688
+margin_left = -13.0
+margin_top = 0.199982
+margin_right = 1444.0
+margin_bottom = 202.2
+
+[node name="ProgressBar" type="ProgressBar" parent="HBoxContainer"]
+margin_right = 1457.0
+margin_bottom = 202.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/fg = SubResource( 1 )
+custom_styles/bg = SubResource( 2 )
+value = 50.0
+percent_visible = false

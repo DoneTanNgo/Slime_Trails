@@ -1,0 +1,1285 @@
+[gd_scene load_steps=43 format=2]
+
+[ext_resource path="res://Sprites/Enemy/PngsFiles/fire_effect.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Enemy/PngsFiles/mega-skele-arms.png" type="Texture" id=2]
+[ext_resource path="res://EnemeyContainer/Basic_enemies/laser_dragon_beam.gd" type="Script" id=3]
+[ext_resource path="res://Sprites/Enemy/PngsFiles/target.png" type="Texture" id=4]
+[ext_resource path="res://EnemeyContainer/Skele_type/skele_left_hand.gd" type="Script" id=5]
+
+[sub_resource type="Animation" id=34]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Left_Arm_axis/Left_Arm:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=35]
+resource_name = "damaged"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Left_Arm_axis/Left_Arm:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.803922, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Left_Arm_axis/Left_Arm:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1.51599, -2.29941 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Left_Arm_axis:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -123.4 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Left_Arm_axis/Shadow:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Left_Arm_axis/Shadow:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Left_Arm_axis/Left_Arm/left_arm_area:monitoring")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Left_Arm_axis/Left_Arm/left_arm_area/CollisionShape2D2:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Left_Arm_axis/Left_Arm:frame")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 12 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Left_Arm_axis/flick_hurtbox/CollisionShape2D:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Left_Arm_axis/Left_Arm:rotation_degrees")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 180.0 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Left_Arm_axis:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Left_Arm_axis/Left_Arm:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Left_Arm_axis/Left_Arm/damage_zone/twobody:disabled")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("body:disabled")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Left_Arm_axis/Left_Arm/damage_zone/CollisionShape2D:disabled")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Left_Arm_axis/player_detect/CollisionShape2D:disabled")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Left_Arm_axis/Left_Arm/fist_area/CollisionShape2D:disabled")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=40]
+resource_name = "death"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("body:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Left_Arm_axis/player_detect/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Left_Arm_axis/flick_hurtbox/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Left_Arm_axis/Left_Arm/left_arm_area/CollisionShape2D2:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Left_Arm_axis/Left_Arm/damage_zone/CollisionShape2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Left_Arm_axis/Left_Arm/damage_zone/twobody:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Left_Arm_axis/Left_Arm:frame")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 18, 19, 20 ]
+}
+
+[sub_resource type="Animation" id=32]
+resource_name = "fist"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Left_Arm_axis/Left_Arm:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Left_Arm_axis/Left_Arm:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 7.62939e-06, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Left_Arm_axis/Left_Arm:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.627451, 1, 0.964706, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("body:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "flick"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Left_Arm_axis/Left_Arm:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 7, 8, 9 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Left_Arm_axis/flick_hurtbox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.3 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "hand_rise"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Left_Arm_axis/Left_Arm:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.51599, -2.29941 ), Vector2( 1.516, -208 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Left_Arm_axis:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Left_Arm_axis/Left_Arm:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 12 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Left_Arm_axis/Shadow:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Left_Arm_axis/Left_Arm:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 180.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Left_Arm_axis:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -78, 11 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Left_Arm_axis/Left_Arm:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.666667, 1, 0.968627, 1 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Left_Arm_axis/Left_Arm/damage_zone/twobody:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("body:disabled")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "hand_slam"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Left_Arm_axis/Left_Arm:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.516, -208 ), Vector2( 1.51599, -2.29941 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Left_Arm_axis/Shadow:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Left_Arm_axis/Left_Arm/left_arm_area/CollisionShape2D2:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Left_Arm_axis/Left_Arm:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.8, 0.9, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 10, 11, 12 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Left_Arm_axis/Left_Arm:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 1.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("body:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 1.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "hand_slam_final"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Left_Arm_axis/Shadow:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Left_Arm_axis/Shadow:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5, 1.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Left_Arm_axis/Left_Arm/left_arm_area/CollisionShape2D2:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Left_Arm_axis/Left_Arm:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 12 ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "walk"
+length = 0.75
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Left_Arm_axis/Left_Arm:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45, 0.6, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 2, 3, 4, 5, 6, 3 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Left_Arm_axis:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -89.9999 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Left_Arm_axis/Left_Arm:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 93.0001, 23.9998 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Left_Arm_axis/Left_Arm:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Left_Arm_axis:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=39]
+extents = Vector2( 94.5381, 69.024 )
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 60.7455
+
+[sub_resource type="CircleShape2D" id=10]
+radius = 61.0
+
+[sub_resource type="RectangleShape2D" id=33]
+extents = Vector2( 125.661, 115.472 )
+
+[sub_resource type="CircleShape2D" id=31]
+radius = 102.02
+
+[sub_resource type="Animation" id=11]
+resource_name = "Left_fire"
+tracks/0/type = "value"
+tracks/0/path = NodePath("../fire_breath:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 90.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=12]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("../fire_breath:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -91.2596 ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "Right_fire"
+tracks/0/type = "value"
+tracks/0/path = NodePath("../fire_breath:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -90.6958, -0.0341714 ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "full_screen_fire_LtoR"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("../fire_breath:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -90.0, 90.0 ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "full_screen_fire_RtoL"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("../fire_breath:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 90.0, -90.0 ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "Left_fire"
+tracks/0/type = "value"
+tracks/0/path = NodePath("../fire_breath:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 90.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=17]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("../fire_breath:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -91.2596 ]
+}
+
+[sub_resource type="Animation" id=18]
+resource_name = "Right_fire"
+tracks/0/type = "value"
+tracks/0/path = NodePath("../fire_breath:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -90.6958, -0.0341714 ]
+}
+
+[sub_resource type="Animation" id=19]
+resource_name = "full_screen_fire_LtoR"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("../fire_breath:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -90.0, 90.0 ]
+}
+
+[sub_resource type="Animation" id=20]
+resource_name = "full_screen_fire_RtoL"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("../fire_breath:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 90.0, -90.0 ]
+}
+
+[sub_resource type="Animation" id=21]
+resource_name = "Left_fire"
+tracks/0/type = "value"
+tracks/0/path = NodePath("../fire_breath:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 90.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=22]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("../fire_breath:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -91.2596 ]
+}
+
+[sub_resource type="Animation" id=23]
+resource_name = "Right_fire"
+tracks/0/type = "value"
+tracks/0/path = NodePath("../fire_breath:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -90.6958, -0.0341714 ]
+}
+
+[sub_resource type="Animation" id=24]
+resource_name = "full_screen_fire_LtoR"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("../fire_breath:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -90.0, 90.0 ]
+}
+
+[sub_resource type="Animation" id=25]
+resource_name = "full_screen_fire_RtoL"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("../fire_breath:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 90.0, -90.0 ]
+}
+
+[sub_resource type="Animation" id=26]
+resource_name = "Left_fire"
+tracks/0/type = "value"
+tracks/0/path = NodePath("../fire_breath:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 90.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=27]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("../fire_breath:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -91.2596 ]
+}
+
+[sub_resource type="Animation" id=28]
+resource_name = "Right_fire"
+tracks/0/type = "value"
+tracks/0/path = NodePath("../fire_breath:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -90.6958, -0.0341714 ]
+}
+
+[sub_resource type="Animation" id=29]
+resource_name = "full_screen_fire_LtoR"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("../fire_breath:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -90.0, 90.0 ]
+}
+
+[sub_resource type="Animation" id=30]
+resource_name = "full_screen_fire_RtoL"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("../fire_breath:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 90.0, -90.0 ]
+}
+
+[sub_resource type="RectangleShape2D" id=37]
+extents = Vector2( 70.9976, 91.72 )
+
+[sub_resource type="RectangleShape2D" id=38]
+extents = Vector2( 79.6934, 99.7928 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" groups=["boss_group"]]
+script = ExtResource( 5 )
+
+[node name="ani_hurt" type="AnimationPlayer" parent="."]
+root_node = NodePath("../ani_Left_hand")
+anims/RESET = SubResource( 34 )
+anims/damaged = SubResource( 35 )
+
+[node name="ani_Left_hand" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 1 )
+anims/death = SubResource( 40 )
+anims/fist = SubResource( 32 )
+anims/flick = SubResource( 8 )
+anims/hand_rise = SubResource( 2 )
+anims/hand_slam = SubResource( 3 )
+anims/hand_slam_final = SubResource( 7 )
+anims/walk = SubResource( 9 )
+
+[node name="body" type="CollisionShape2D" parent="." groups=["boss_group"]]
+visible = false
+position = Vector2( 32.0225, -9.45212 )
+rotation = -1.5708
+shape = SubResource( 39 )
+
+[node name="t2" type="Sprite" parent="."]
+visible = false
+position = Vector2( 495, -96 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="t1" type="Sprite" parent="."]
+visible = false
+position = Vector2( 426, -97 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="Left_Arm_axis" type="Position2D" parent="."]
+rotation = -2.15374
+
+[node name="player_detect" type="Area2D" parent="Left_Arm_axis"]
+position = Vector2( -0.909723, 130.38 )
+rotation = 2.15374
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left_Arm_axis/player_detect"]
+position = Vector2( -23.1476, 27.3492 )
+shape = SubResource( 5 )
+
+[node name="flick_hurtbox" type="Area2D" parent="Left_Arm_axis" groups=["enemey_group"]]
+position = Vector2( 0.000221252, 129 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left_Arm_axis/flick_hurtbox" groups=["enemey_group"]]
+modulate = Color( 1, 0, 0, 1 )
+self_modulate = Color( 1, 0, 0, 1 )
+position = Vector2( -11.0001, -33 )
+shape = SubResource( 10 )
+disabled = true
+
+[node name="Shadow" type="Sprite" parent="Left_Arm_axis"]
+modulate = Color( 0, 0, 0, 0 )
+position = Vector2( 76.719, -3.14018 )
+rotation = -2.1541
+scale = Vector2( 1.07616, 1.12686 )
+texture = ExtResource( 1 )
+
+[node name="Left_Arm" type="Sprite" parent="Left_Arm_axis"]
+position = Vector2( 1.51599, -2.29941 )
+rotation = 3.14159
+scale = Vector2( 0.441666, 0.441666 )
+texture = ExtResource( 2 )
+flip_h = true
+flip_v = true
+hframes = 4
+vframes = 6
+frame = 12
+
+[node name="fist_area" type="Area2D" parent="Left_Arm_axis/Left_Arm"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left_Arm_axis/Left_Arm/fist_area"]
+position = Vector2( -103.019, 31.6982 )
+shape = SubResource( 33 )
+disabled = true
+
+[node name="left_arm_area" type="Area2D" parent="Left_Arm_axis/Left_Arm" groups=["enemey_group"]]
+position = Vector2( 1003.64, -1072.54 )
+rotation = 2.1541
+scale = Vector2( 2.26415, 2.26415 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Left_Arm_axis/Left_Arm/left_arm_area" groups=["enemey_group"]]
+position = Vector2( 680.834, 175.842 )
+rotation = -0.588176
+shape = SubResource( 31 )
+disabled = true
+
+[node name="pinky" type="Position2D" parent="Left_Arm_axis/Left_Arm"]
+position = Vector2( -109.285, -64.5907 )
+rotation = 1.83259
+scale = Vector2( 1.3, 1.3 )
+
+[node name="laser" type="RayCast2D" parent="Left_Arm_axis/Left_Arm/pinky" groups=["enemey_group"]]
+position = Vector2( -0.0470581, 5.83545 )
+scale = Vector2( 0.769231, 0.769231 )
+enabled = true
+cast_to = Vector2( 0, 1000 )
+collision_mask = 2
+script = ExtResource( 3 )
+
+[node name="Line2D" type="Line2D" parent="Left_Arm_axis/Left_Arm/pinky/laser"]
+modulate = Color( 0, 0.6, 1, 1 )
+position = Vector2( 0.00432123, 27.0371 )
+points = PoolVector2Array( -0.00432123, -27.0371, 0.00927584, 58.0371 )
+width = 1.0
+default_color = Color( 0, 0.6, 1, 1 )
+
+[node name="end" type="Position2D" parent="Left_Arm_axis/Left_Arm/pinky/laser"]
+position = Vector2( -0.00111285, -6.96289 )
+rotation = -0.000159826
+
+[node name="Tween" type="Tween" parent="Left_Arm_axis/Left_Arm/pinky/laser"]
+
+[node name="Fire_breath_animation" type="AnimationPlayer" parent="Left_Arm_axis/Left_Arm/pinky/laser"]
+root_node = NodePath("../../Head_area")
+anims/Left_fire = SubResource( 11 )
+anims/RESET = SubResource( 12 )
+anims/Right_fire = SubResource( 13 )
+anims/full_screen_fire_LtoR = SubResource( 14 )
+anims/full_screen_fire_RtoL = SubResource( 15 )
+
+[node name="middle" type="Position2D" parent="Left_Arm_axis/Left_Arm"]
+position = Vector2( -130.621, 62.3676 )
+rotation = 1.57079
+scale = Vector2( 1.7, 1.7 )
+
+[node name="laser" type="RayCast2D" parent="Left_Arm_axis/Left_Arm/middle" groups=["enemey_group"]]
+position = Vector2( -0.936951, 6.24109 )
+enabled = true
+cast_to = Vector2( 0, 1000 )
+collision_mask = 2
+script = ExtResource( 3 )
+
+[node name="Line2D" type="Line2D" parent="Left_Arm_axis/Left_Arm/middle/laser"]
+modulate = Color( 0, 0.6, 1, 1 )
+position = Vector2( 0.00432123, 27.0371 )
+points = PoolVector2Array( -0.00432123, -27.0371, 0.00927584, 58.0371 )
+width = 1.0
+default_color = Color( 0, 0.6, 1, 1 )
+
+[node name="end" type="Position2D" parent="Left_Arm_axis/Left_Arm/middle/laser"]
+position = Vector2( -0.00111285, -6.96289 )
+rotation = -0.000159826
+
+[node name="Tween" type="Tween" parent="Left_Arm_axis/Left_Arm/middle/laser"]
+
+[node name="Fire_breath_animation" type="AnimationPlayer" parent="Left_Arm_axis/Left_Arm/middle/laser"]
+root_node = NodePath("../../Head_area")
+anims/Left_fire = SubResource( 16 )
+anims/RESET = SubResource( 17 )
+anims/Right_fire = SubResource( 18 )
+anims/full_screen_fire_LtoR = SubResource( 19 )
+anims/full_screen_fire_RtoL = SubResource( 20 )
+
+[node name="index" type="Position2D" parent="Left_Arm_axis/Left_Arm"]
+position = Vector2( -111.512, 115.648 )
+rotation = 1.309
+scale = Vector2( 1.7, 1.7 )
+
+[node name="laser" type="RayCast2D" parent="Left_Arm_axis/Left_Arm/index" groups=["enemey_group"]]
+position = Vector2( 0.518738, 4.66891 )
+rotation = 0.0255741
+enabled = true
+cast_to = Vector2( 0, 1000 )
+collision_mask = 2
+script = ExtResource( 3 )
+
+[node name="Line2D" type="Line2D" parent="Left_Arm_axis/Left_Arm/index/laser"]
+modulate = Color( 0, 0.6, 1, 1 )
+position = Vector2( 0.00432123, 27.0371 )
+points = PoolVector2Array( -0.00432123, -27.0371, 0.00927584, 58.0371 )
+width = 1.0
+default_color = Color( 0, 0.6, 1, 1 )
+
+[node name="end" type="Position2D" parent="Left_Arm_axis/Left_Arm/index/laser"]
+position = Vector2( -0.00111285, -6.96289 )
+rotation = -0.000159826
+
+[node name="Tween" type="Tween" parent="Left_Arm_axis/Left_Arm/index/laser"]
+
+[node name="Fire_breath_animation" type="AnimationPlayer" parent="Left_Arm_axis/Left_Arm/index/laser"]
+root_node = NodePath("../../Head_area")
+anims/Left_fire = SubResource( 21 )
+anims/RESET = SubResource( 22 )
+anims/Right_fire = SubResource( 23 )
+anims/full_screen_fire_LtoR = SubResource( 24 )
+anims/full_screen_fire_RtoL = SubResource( 25 )
+
+[node name="thumb" type="Position2D" parent="Left_Arm_axis/Left_Arm"]
+position = Vector2( -20.2204, 162.284 )
+rotation = 0.785397
+scale = Vector2( 1.5, 1.5 )
+
+[node name="laser" type="RayCast2D" parent="Left_Arm_axis/Left_Arm/thumb" groups=["enemey_group"]]
+position = Vector2( -0.936951, 6.24109 )
+rotation = 0.126052
+enabled = true
+cast_to = Vector2( 0, 1000 )
+collision_mask = 2
+script = ExtResource( 3 )
+
+[node name="Line2D" type="Line2D" parent="Left_Arm_axis/Left_Arm/thumb/laser"]
+modulate = Color( 0, 0.6, 1, 1 )
+position = Vector2( 0.00432123, 27.0371 )
+points = PoolVector2Array( -0.00432123, -27.0371, 0.00927584, 58.0371 )
+width = 1.0
+default_color = Color( 0, 0.6, 1, 1 )
+
+[node name="end" type="Position2D" parent="Left_Arm_axis/Left_Arm/thumb/laser"]
+position = Vector2( -0.00111285, -6.96289 )
+rotation = -0.000159826
+
+[node name="Tween" type="Tween" parent="Left_Arm_axis/Left_Arm/thumb/laser"]
+
+[node name="Fire_breath_animation" type="AnimationPlayer" parent="Left_Arm_axis/Left_Arm/thumb/laser"]
+root_node = NodePath("../../Head_area")
+anims/Left_fire = SubResource( 26 )
+anims/RESET = SubResource( 27 )
+anims/Right_fire = SubResource( 28 )
+anims/full_screen_fire_LtoR = SubResource( 29 )
+anims/full_screen_fire_RtoL = SubResource( 30 )
+
+[node name="damage_zone" type="Area2D" parent="Left_Arm_axis/Left_Arm" groups=["damage_zone"]]
+position = Vector2( 3.43244, -5.20622 )
+scale = Vector2( 2.26415, 2.26415 )
+
+[node name="twobody" type="CollisionShape2D" parent="Left_Arm_axis/Left_Arm/damage_zone"]
+position = Vector2( -83.5162, 8.75142 )
+rotation = -1.57569
+shape = SubResource( 37 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left_Arm_axis/Left_Arm/damage_zone"]
+position = Vector2( -82.3592, 8.25359 )
+rotation = -1.58811
+shape = SubResource( 38 )
+
+[connection signal="area_entered" from="Left_Arm_axis/player_detect" to="." method="_on_player_detect_area_entered"]
+[connection signal="area_exited" from="Left_Arm_axis/player_detect" to="." method="_on_player_detect_area_exited"]
+[connection signal="body_entered" from="Left_Arm_axis/flick_hurtbox" to="." method="_on_flick_hurtbox_body_entered"]
+[connection signal="area_entered" from="Left_Arm_axis/Left_Arm/fist_area" to="." method="_on_fist_area_area_entered"]
+[connection signal="area_entered" from="Left_Arm_axis/Left_Arm/damage_zone" to="." method="_on_damage_zone_area_entered"]
+[connection signal="area_exited" from="Left_Arm_axis/Left_Arm/damage_zone" to="." method="_on_damage_zone_area_exited"]

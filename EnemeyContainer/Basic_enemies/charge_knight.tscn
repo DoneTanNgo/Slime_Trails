@@ -1,0 +1,328 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Sprites/Enemy/PngsFiles/Spear.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Enemy/PngsFiles/small guy.png" type="Texture" id=2]
+[ext_resource path="res://EnemeyContainer/Basic_enemies/charge_knight.gd" type="Script" id=3]
+[ext_resource path="res://Sprites/Player/PngsFiles/light.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 37.5, 45.5 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32.5, 41 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 47.2568, 40.5 )
+
+[sub_resource type="CircleShape2D" id=8]
+radius = 103.947
+
+[sub_resource type="AnimationNodeAnimation" id=11]
+animation = "charge_mation"
+
+[sub_resource type="AnimationNodeAnimation" id=12]
+animation = "Idle"
+
+[sub_resource type="AnimationNodeTransition" id=13]
+input_count = 2
+input_0/name = "state 0"
+input_0/auto_advance = false
+input_1/name = "state 1"
+input_1/auto_advance = false
+
+[sub_resource type="AnimationNodeBlendTree" id=14]
+nodes/Animation/node = SubResource( 12 )
+nodes/Animation/position = Vector2( 53.3333, 26.6667 )
+"nodes/Animation 2/node" = SubResource( 11 )
+"nodes/Animation 2/position" = Vector2( 83, 203 )
+nodes/charge/node = SubResource( 13 )
+nodes/charge/position = Vector2( 373.333, 80 )
+nodes/output/position = Vector2( 560, 133.333 )
+node_connections = [ "charge", 0, "Animation", "charge", 1, "Animation 2", "output", 0, "charge" ]
+
+[sub_resource type="Animation" id=15]
+resource_name = "Idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Rotation/Position2D/Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 95, -56 ), Vector2( 110, -56 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Rotation/Position2D/Sprite:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 2 ), Vector2( 0, 2 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Rotation/Position2D/Sprite/Sword_area/Sword_hitbox:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Rotation/Position2D/Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Rotation/Position2D/Sprite/Sword_area/Sword_hitbox:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Rotation:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 180.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Sprite:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Rotation/Position2D/Sprite:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 95, -56 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Rotation/Position2D/Sprite:frame_coords")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 2 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "charge_mation"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Rotation/Position2D/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Rotation/Position2D/Sprite/Sword_area/Sword_hitbox:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "charge_up"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "moving"
+length = 0.6
+loop = true
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "pop_up_mation"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0.784314, 0.709804, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="KinematicBody2D" type="KinematicBody2D" groups=["small_group"]]
+modulate = Color( 1, 1, 1, 0 )
+scale = Vector2( 1.26629, 1.26629 )
+collision_layer = 0
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 2 )
+hframes = 2
+vframes = 3
+
+[node name="hit_box" type="Area2D" parent="." groups=["small_group"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_box" groups=["small_group"]]
+position = Vector2( -2.5, 7.5 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -3.5, 8 )
+shape = SubResource( 1 )
+
+[node name="Rotation" type="Position2D" parent="."]
+position = Vector2( 1, -2 )
+rotation = 3.14159
+
+[node name="Position2D" type="Position2D" parent="Rotation"]
+position = Vector2( -55, 24 )
+
+[node name="Sprite" type="Sprite" parent="Rotation/Position2D"]
+position = Vector2( 95, -56 )
+texture = ExtResource( 1 )
+flip_h = true
+hframes = 2
+vframes = 3
+frame = 4
+
+[node name="Sword_area" type="Area2D" parent="Rotation/Position2D/Sprite" groups=["enemey_group"]]
+
+[node name="Sword_hitbox" type="CollisionShape2D" parent="Rotation/Position2D/Sprite/Sword_area" groups=["enemey_group"]]
+position = Vector2( 12.2568, 1.5 )
+shape = SubResource( 2 )
+disabled = true
+
+[node name="area_search" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area_search"]
+position = Vector2( -27, 2 )
+shape = SubResource( 8 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 14 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/charge/current = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Idle = SubResource( 15 )
+anims/RESET = SubResource( 3 )
+anims/charge_mation = SubResource( 9 )
+anims/charge_up = SubResource( 10 )
+anims/moving = SubResource( 4 )
+anims/pop_up_mation = SubResource( 5 )
+
+[node name="Light2D" type="Light2D" parent="."]
+texture = ExtResource( 4 )
+energy = 0.3
+
+[connection signal="area_entered" from="Rotation/Position2D/Sprite/Sword_area" to="." method="_on_Sword_area_area_entered"]
