@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/_mage_atk_04_01.mp3-d08946d6d51a0ad2a69c23e90a31e324.mp3str"
+
+[deps]
+
+source_file="res://Sound/sfx/_mage_atk_04_01.mp3"
+dest_files=[ "res://.import/_mage_atk_04_01.mp3-d08946d6d51a0ad2a69c23e90a31e324.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/mus_Falling.mp3-bdff393afa8b805963e0c2a508b5d245.mp3str"
+
+[deps]
+
+source_file="res://Sound/mus_Falling.mp3"
+dest_files=[ "res://.import/mus_Falling.mp3-bdff393afa8b805963e0c2a508b5d245.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

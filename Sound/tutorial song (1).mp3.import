@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/tutorial song (1).mp3-bc5a2a94f578c0bcdfcf993a5e27225e.mp3str"
+
+[deps]
+
+source_file="res://Sound/tutorial song (1).mp3"
+dest_files=[ "res://.import/tutorial song (1).mp3-bc5a2a94f578c0bcdfcf993a5e27225e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

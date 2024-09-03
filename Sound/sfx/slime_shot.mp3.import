@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/slime_shot.mp3-32910fc5aab425e7b62c417741ded8b1.mp3str"
+
+[deps]
+
+source_file="res://Sound/sfx/slime_shot.mp3"
+dest_files=[ "res://.import/slime_shot.mp3-32910fc5aab425e7b62c417741ded8b1.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

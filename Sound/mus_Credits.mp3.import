@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/mus_Credits.mp3-60aeba13051b5f6d901ccb933b78a81d.mp3str"
+
+[deps]
+
+source_file="res://Sound/mus_Credits.mp3"
+dest_files=[ "res://.import/mus_Credits.mp3-60aeba13051b5f6d901ccb933b78a81d.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

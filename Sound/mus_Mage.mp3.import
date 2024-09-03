@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/mus_Mage.mp3-901b00751802570dd8a7c6234ba4672c.mp3str"
+
+[deps]
+
+source_file="res://Sound/mus_Mage.mp3"
+dest_files=[ "res://.import/mus_Mage.mp3-901b00751802570dd8a7c6234ba4672c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

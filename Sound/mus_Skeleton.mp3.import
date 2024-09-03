@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/mus_Skeleton.mp3-fdf32b5fe387076c93e4882b9c182816.mp3str"
+
+[deps]
+
+source_file="res://Sound/mus_Skeleton.mp3"
+dest_files=[ "res://.import/mus_Skeleton.mp3-fdf32b5fe387076c93e4882b9c182816.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
