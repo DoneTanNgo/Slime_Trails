@@ -1,0 +1,74 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Menu/Main_slime_button-1.png.png" type="Texture" id=2]
+[ext_resource path="res://Menu/In_Menu.gd" type="Script" id=3]
+[ext_resource path="res://Menu/Wall_paper-2.png.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFontData" id=12]
+font_path = "res://Godot-Fontpack/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/poco/Poco.ttf"
+
+[sub_resource type="DynamicFont" id=9]
+size = 100
+font_data = SubResource( 12 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.203922, 0.960784, 0.533333, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+corner_radius_top_right = 100
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.580392, 0.372549, 0.0392157, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+corner_radius_top_right = 100
+corner_radius_bottom_right = 4
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = -1382.0
+margin_top = -826.0
+margin_right = 1371.0
+margin_bottom = 874.0
+
+[node name="Sprite" type="Sprite" parent="Panel"]
+position = Vector2( 1379.5, 854.5 )
+scale = Vector2( 3.57682, 2.22005 )
+texture = ExtResource( 4 )
+
+[node name="Back To Menu" type="Button" parent="Panel"]
+anchor_right = 0.136
+anchor_bottom = 0.033
+margin_left = 28.0
+margin_top = 1371.0
+margin_right = 449.592
+margin_bottom = 1550.9
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+text = "Back To Menu"
+
+[node name="TextureButton" type="TextureButton" parent="Panel"]
+margin_left = 745.0
+margin_top = 80.0
+margin_right = 937.0
+margin_bottom = 272.0
+rect_scale = Vector2( 7.06006, 7.06006 )
+texture_normal = ExtResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 2.5, 2.5 )
+
+[connection signal="pressed" from="Panel/Back To Menu" to="." method="_on_Back_To_Menu_pressed"]
+[connection signal="pressed" from="Panel/TextureButton" to="." method="_on_TextureButton_pressed"]

@@ -1,0 +1,497 @@
+[gd_scene load_steps=30 format=2]
+
+[ext_resource path="res://Sprites/Tiles/Overworld Map-1.png.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Player/PngsFiles/Map_Slime.png" type="Texture" id=2]
+[ext_resource path="res://Menu/Map_Slime.gd" type="Script" id=3]
+[ext_resource path="res://Sprites/Player/PngsFiles/Projectiles_UI.png" type="Texture" id=4]
+[ext_resource path="res://Menu/Level_map.gd" type="Script" id=5]
+[ext_resource path="res://Godot-Fontpack/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/poco/Poco.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Sprites/Tiles/transition_fall.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Player/PngsFiles/map_slime_icon.png" type="Texture" id=8]
+[ext_resource path="res://Godot-Fontpack/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/architect-s-daughter/ArchitectsDaughter.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://Sprites/Keys/W-Key.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Keys/A-Key.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Keys/S-Key.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Keys/D-Key.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/Keys/Shift-Key.png" type="Texture" id=14]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16, 776.5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 784.5, 10 )
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 65.6201
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 52.1582, 58.2055 )
+
+[sub_resource type="CircleShape2D" id=8]
+radius = 133.405
+
+[sub_resource type="CircleShape2D" id=9]
+radius = 91.4784
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 79.749, 69.9221 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 15.1183, 10 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "backward_walking"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 2, 3 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "forward_walking"
+length = 0.7
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="DynamicFont" id=10]
+size = 20
+use_mipmaps = true
+extra_spacing_top = -18
+extra_spacing_bottom = 2
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFontData" id=24]
+font_path = "res://Godot-Fontpack/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/poco/Poco.ttf"
+
+[sub_resource type="DynamicFont" id=23]
+size = 20
+font_data = SubResource( 24 )
+fallback/0 = ExtResource( 9 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 759.0, 758.0, -616.0 ],
+"_edit_vertical_guides_": [ 775.0, 14.0, 132.0 ]
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 141, -613 )
+scale = Vector2( 3.625, 3.625 )
+texture = ExtResource( 7 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2( 774, 50 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2( -5, -52.5 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2( -766, 59 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2( -5, -52.5 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -3.5, 764 )
+shape = SubResource( 2 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2( 8, -1536 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( -3.5, 764 )
+shape = SubResource( 2 )
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="."]
+position = Vector2( 735, 23 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
+position = Vector2( -312, 640 )
+shape = SubResource( 7 )
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2( -312, 640 )
+shape = SubResource( 7 )
+
+[node name="Cave" type="ColorRect" parent="."]
+margin_left = 31.0
+margin_top = -719.0
+margin_right = 239.0
+margin_bottom = -524.0
+
+[node name="Dragon" type="ColorRect" parent="."]
+margin_left = -332.0
+margin_top = -536.0
+margin_right = -118.0
+margin_bottom = -345.0
+
+[node name="Knight" type="ColorRect" parent="."]
+margin_left = 219.0
+margin_top = -166.0
+margin_right = 433.0
+margin_bottom = 38.0
+
+[node name="Exit_level" type="Area2D" parent="."]
+position = Vector2( -717, 203 )
+scale = Vector2( 1.3229, 1.3229 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit_level"]
+position = Vector2( 560.89, 413.486 )
+shape = SubResource( 12 )
+
+[node name="Tutorial" type="Area2D" parent="."]
+position = Vector2( -525, 93 )
+scale = Vector2( 1.3229, 1.3229 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorial"]
+position = Vector2( 560.89, 413.486 )
+shape = SubResource( 12 )
+
+[node name="Knight_area" type="Area2D" parent="."]
+position = Vector2( 211, -152 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Knight_area"]
+position = Vector2( 111, 75 )
+shape = SubResource( 8 )
+
+[node name="Dragon_area" type="Area2D" parent="."]
+position = Vector2( -338, -514 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dragon_area"]
+position = Vector2( 111, 75 )
+shape = SubResource( 8 )
+
+[node name="Mage_area" type="Area2D" parent="."]
+position = Vector2( -525, 93 )
+scale = Vector2( 1.3229, 1.3229 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mage_area"]
+position = Vector2( 106.584, 76.3476 )
+shape = SubResource( 9 )
+
+[node name="Falling_area" type="Area2D" parent="."]
+position = Vector2( -525, 93 )
+scale = Vector2( 1.3229, 1.3229 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Falling_area"]
+position = Vector2( 498.148, -538.967 )
+shape = SubResource( 13 )
+
+[node name="Map_Slime" type="KinematicBody2D" parent="."]
+position = Vector2( 26, 616 )
+scale = Vector2( 1.3229, 1.3229 )
+script = ExtResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="Map_Slime" groups=["player_group"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map_Slime/Area2D"]
+position = Vector2( 5.72205e-06, 3.02368 )
+shape = SubResource( 11 )
+
+[node name="Camera2D" type="Camera2D" parent="Map_Slime"]
+current = true
+zoom = Vector2( 1.5, 1.5 )
+limit_left = -767
+limit_top = -753
+limit_right = 775
+limit_bottom = 759
+smoothing_enabled = true
+smoothing_speed = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map_Slime"]
+position = Vector2( 0, 2 )
+scale = Vector2( 1.39561, 0.865063 )
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="Map_Slime"]
+texture = ExtResource( 2 )
+hframes = 2
+vframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Map_Slime"]
+anims/RESET = SubResource( 4 )
+anims/backward_walking = SubResource( 5 )
+anims/forward_walking = SubResource( 6 )
+
+[node name="popup" type="Panel" parent="Map_Slime"]
+visible = false
+margin_left = -74.8357
+margin_top = -110.364
+margin_right = 82.1643
+margin_bottom = -29.3638
+
+[node name="name" type="Label" parent="Map_Slime/popup"]
+margin_left = 78.6153
+margin_top = 37.7958
+margin_right = 173.615
+margin_bottom = 52.7958
+custom_fonts/font = SubResource( 10 )
+text = "Creature"
+
+[node name="Sprite2" type="Sprite" parent="Map_Slime/popup"]
+position = Vector2( 30.9926, 39.3076 )
+
+[node name="Label2" type="Label" parent="Map_Slime/popup"]
+margin_left = 31.7485
+margin_top = 61.9851
+margin_right = 127.748
+margin_bottom = 75.9851
+text = "Press F to Start"
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="."]
+position = Vector2( -25, -707 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7"]
+position = Vector2( -312, 640 )
+shape = SubResource( 7 )
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="."]
+position = Vector2( 642, -354 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D8"]
+position = Vector2( -312, 640 )
+shape = SubResource( 7 )
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="."]
+position = Vector2( 325, -775 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D9"]
+position = Vector2( -312, 640 )
+shape = SubResource( 7 )
+
+[node name="StaticBody2D10" type="StaticBody2D" parent="."]
+position = Vector2( -444, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D10"]
+position = Vector2( -312, 640 )
+shape = SubResource( 7 )
+
+[node name="StaticBody2D11" type="StaticBody2D" parent="."]
+position = Vector2( -450, -229 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D11"]
+position = Vector2( -312, 640 )
+shape = SubResource( 7 )
+
+[node name="StaticBody2D12" type="StaticBody2D" parent="."]
+position = Vector2( -438, -473 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D12"]
+position = Vector2( -312, 640 )
+shape = SubResource( 7 )
+
+[node name="StaticBody2D13" type="StaticBody2D" parent="."]
+position = Vector2( -443, -705 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D13"]
+position = Vector2( -312, 640 )
+shape = SubResource( 7 )
+
+[node name="StaticBody2D14" type="StaticBody2D" parent="."]
+position = Vector2( -449, -929 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D14"]
+position = Vector2( -312, 640 )
+shape = SubResource( 7 )
+
+[node name="StaticBody2D15" type="StaticBody2D" parent="."]
+position = Vector2( -449, -1181 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D15"]
+position = Vector2( -312, 640 )
+shape = SubResource( 7 )
+
+[node name="StaticBody2D16" type="StaticBody2D" parent="."]
+position = Vector2( -135, -1087 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D16"]
+position = Vector2( -312, 640 )
+shape = SubResource( 7 )
+
+[node name="StaticBody2D17" type="StaticBody2D" parent="."]
+position = Vector2( 660, -1078 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D17"]
+position = Vector2( -312, 640 )
+shape = SubResource( 7 )
+
+[node name="StaticBody2D18" type="StaticBody2D" parent="."]
+position = Vector2( 90, -1329 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D18"]
+position = Vector2( -312, 640 )
+shape = SubResource( 7 )
+
+[node name="StaticBody2D19" type="StaticBody2D" parent="."]
+position = Vector2( 1051, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D19"]
+position = Vector2( -312, 640 )
+shape = SubResource( 7 )
+
+[node name="StaticBody2D20" type="StaticBody2D" parent="."]
+position = Vector2( 1060, -238 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D20"]
+position = Vector2( -312, 640 )
+shape = SubResource( 7 )
+
+[node name="StaticBody2D21" type="StaticBody2D" parent="."]
+position = Vector2( 1073, -480 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D21"]
+position = Vector2( -312, 640 )
+shape = SubResource( 7 )
+
+[node name="StaticBody2D22" type="StaticBody2D" parent="."]
+position = Vector2( 1064, -732 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D22"]
+position = Vector2( -312, 640 )
+shape = SubResource( 7 )
+
+[node name="StaticBody2D23" type="StaticBody2D" parent="."]
+position = Vector2( 1064, -1006 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D23"]
+position = Vector2( -312, 640 )
+shape = SubResource( 7 )
+
+[node name="StaticBody2D24" type="StaticBody2D" parent="."]
+position = Vector2( 1082, -1271 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D24"]
+position = Vector2( -312, 640 )
+shape = SubResource( 7 )
+
+[node name="StaticBody2D25" type="StaticBody2D" parent="."]
+position = Vector2( -432, -1412 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D25"]
+position = Vector2( -312, 640 )
+shape = SubResource( 7 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer"]
+margin_left = 5.0
+margin_top = -2.0
+margin_right = 197.0
+margin_bottom = 190.0
+rect_scale = Vector2( 0.431757, 0.431757 )
+texture_normal = ExtResource( 8 )
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+margin_left = 3.0
+margin_top = 79.0
+margin_right = 150.0
+margin_bottom = 93.0
+text = "This Is A Button"
+
+[node name="proj_2" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 138.308, 46.3082 )
+scale = Vector2( 0.437248, 0.437248 )
+texture = ExtResource( 4 )
+hframes = 3
+vframes = 3
+frame = 1
+
+[node name="proj_1" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 123.308, 26.3082 )
+scale = Vector2( 0.402255, 0.402255 )
+texture = ExtResource( 4 )
+hframes = 3
+vframes = 3
+
+[node name="W-Key" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 61, 551 )
+texture = ExtResource( 10 )
+hframes = 2
+
+[node name="A-Key" type="Sprite" parent="CanvasLayer/W-Key"]
+position = Vector2( -33, 29 )
+texture = ExtResource( 11 )
+hframes = 2
+
+[node name="S-Key" type="Sprite" parent="CanvasLayer/W-Key/A-Key"]
+position = Vector2( 33, 0 )
+texture = ExtResource( 12 )
+hframes = 2
+
+[node name="D-Key" type="Sprite" parent="CanvasLayer/W-Key/A-Key/S-Key"]
+position = Vector2( 32, 0 )
+texture = ExtResource( 13 )
+hframes = 2
+
+[node name="Shift-Key" type="Sprite" parent="CanvasLayer/W-Key/A-Key"]
+position = Vector2( 118, 1 )
+texture = ExtResource( 14 )
+hframes = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/W-Key/A-Key/Shift-Key"]
+margin_left = -25.0
+margin_top = -40.0
+margin_right = 39.0
+margin_bottom = -9.0
+custom_fonts/font = SubResource( 23 )
+text = "Sprint"
+
+[connection signal="area_entered" from="Exit_level" to="." method="_on_Exit_level_area_entered"]
+[connection signal="area_exited" from="Exit_level" to="." method="_on_Exit_level_area_exited"]
+[connection signal="area_entered" from="Tutorial" to="." method="_on_Tutorial_area_entered"]
+[connection signal="area_exited" from="Tutorial" to="." method="_on_Tutorial_area_exited"]
+[connection signal="area_entered" from="Knight_area" to="." method="_on_Knight_area_area_entered"]
+[connection signal="area_exited" from="Knight_area" to="." method="_on_Knight_area_area_exited"]
+[connection signal="area_entered" from="Dragon_area" to="." method="_on_Dragon_area_area_entered"]
+[connection signal="area_exited" from="Dragon_area" to="." method="_on_Dragon_area_area_exited"]
+[connection signal="area_entered" from="Mage_area" to="." method="_on_Mage_area_area_entered"]
+[connection signal="area_exited" from="Mage_area" to="." method="_on_Mage_area_area_exited"]
+[connection signal="area_entered" from="Falling_area" to="." method="_on_Falling_area_area_entered"]
+[connection signal="area_exited" from="Falling_area" to="." method="_on_Falling_area_area_exited"]
+[connection signal="pressed" from="CanvasLayer/TextureButton" to="." method="_on_TextureButton_pressed"]
