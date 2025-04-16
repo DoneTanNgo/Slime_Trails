@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://PlayerHolder/player_ui.tscn" type="PackedScene" id=2]
+[ext_resource path="res://EnemeyContainer/enemey_ui.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Complete_GUI.gd" type="Script" id=4]
+[ext_resource path="res://PlayerHolder/GUI.tscn" type="PackedScene" id=5]
+
+[node name="Complete_GUI" type="CanvasLayer"]
+script = ExtResource( 4 )
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 5 )]
+
+[node name="Enemey_UI" parent="." instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -701.0
+margin_top = 839.0
+margin_right = -381.0
+margin_bottom = 859.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Player_UI" parent="." instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -766.0
+margin_top = -771.0
+margin_right = -766.0
+margin_bottom = -731.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
